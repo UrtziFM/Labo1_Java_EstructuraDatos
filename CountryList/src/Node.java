@@ -26,10 +26,7 @@ public class Node { // this is node to use as reference in the double list
     public void setPreElement(Node preElement){ //this method set the previous element in the list
         this.preElement = preElement;
     }
-
-    @Override
-    public String toString() {
-        return "Node [value=" + countryName + ", nextElement=" + ((nextElement != null) ? nextElement.getCountry()
-                : null) + ", preElement=" +( (preElement != null) ? preElement.getCountry() : null) + "]";
+    public String showList() {
+        return countryName;
     }
 }

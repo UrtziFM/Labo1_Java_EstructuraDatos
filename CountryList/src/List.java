@@ -1,5 +1,7 @@
 package src;
 
+import javax.swing.JOptionPane;
+
 public class List {
     private Node first;
     private Node last;
@@ -27,12 +29,23 @@ public class List {
             first = node;
         }
     }
- 
-    public void printList() {
+
+    int size = 0;
+
+    public void printList(){
         for (Node i = first; i != null; i = i.getNextElement()) {
-            System.out.printf("\n %s ", i.toString());
+            System.out.printf("\n %s ", i.showList());
+            size++;
         }
-        System.out.println();
+        System.out.println("\n");
+    }
+    public void countList(){
+        System.out.printf(" Size of the list is: %d \n", size);
+    }
+    public void printCountry(){
+        String texto =JOptionPane.showInputDialog("What position of the list do you want to print?");
+        int n = Integer.parseInt(texto); //text to integer
+    
     }
 }
 
