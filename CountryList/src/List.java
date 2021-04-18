@@ -31,6 +31,7 @@ public class List {
     }
 
     int size = 0;
+    int position = 0;
 
     public void printList(){
         for (Node i = first; i != null; i = i.getNextElement()) {
@@ -45,7 +46,23 @@ public class List {
     public void printCountry(){
         String texto =JOptionPane.showInputDialog("What position of the list do you want to print?");
         int n = Integer.parseInt(texto); //text to integer
-    
+        for (Node i = first; i != null; i = i.getNextElement()) {
+            position++;
+            if(position == n){
+                System.out.printf("\n %s ", i.showList());
+            }
+        }
+        System.out.println("\n");
+    }
+    public void validateCountry(){
+        String texto =JOptionPane.showInputDialog("What country do you want to validate?");
+        for (Node i = first; i != null; i = i.getNextElement()) {
+            String countryName = i.showList();
+            if(countryName.equals(texto)){
+                System.out.printf("This country is on the list \n");
+            }
+        }
+        System.out.println();
     }
 }
 

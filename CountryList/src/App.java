@@ -8,7 +8,8 @@ public class App {
         list.addLast("Holland");
         list.addFirst("France");
         list.printList();
-        list.countList();
-        list.printCountry();
+        //list.countList();
+        //list.printCountry();
+        list.validateCountry();
     }
 }
