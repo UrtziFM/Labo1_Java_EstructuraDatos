@@ -7,9 +7,13 @@ public class App {
         list.addFirst("Andorra");
         list.addLast("Holland");
         list.addFirst("France");
-        list.printList();
         //list.countList();
         //list.printCountry();
-        list.validateCountry();
+        //list.validateCountry();
+        //list.printList();
+        //list.extractPosition(0);
+        list.printList();
+        list.extractCountry("France");
+        list.printList();
     }
 }

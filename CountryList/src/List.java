@@ -5,6 +5,9 @@ import javax.swing.JOptionPane;
 public class List {
     private Node first;
     private Node last;
+    int size = 0;
+    int position = 0;
+    int n;
 
     public void addLast(String countryName) {
         Node node = new Node(countryName);
@@ -29,9 +32,6 @@ public class List {
             first = node;
         }
     }
-
-    int size = 0;
-    int position = 0;
 
     public void printList(){
         for (Node i = first; i != null; i = i.getNextElement()) {
@@ -63,6 +63,29 @@ public class List {
             }
         }
         System.out.println();
+    }
+    public Object extractPosition(int n) {
+        Object out = null;
+        Node iterator = first;
+
+        for (int i = 1; i < n; i++) {
+            if (iterator.getNextElement().getNextElement() == null)
+                break; //we stop is we reach the end of the list
+                iterator = iterator.getNextElement();
+            }
+            out = iterator.getNextElement().getCountry();
+            iterator.setNextElement(iterator.getNextElement().getNextElement());
+        return out;
+    }
+    public Object extractCountry(String countryName) {
+        Object out = null;
+        for (Node i = first; i != null; i = i.getNextElement()) {
+            String country = i.showList();
+            if(country.equals(countryName)){
+                i.setNextElement(i.getNextElement().getNextElement());
+            }
+        }
+        return out;
     }
 }
 
