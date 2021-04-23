@@ -13,7 +13,7 @@ public class App {
         //list.printList();
         //list.extractPosition(0);
         list.printList();
-        list.extractCountry("France");
+        list.extractCountry("Andorra");
         list.printList();
     }
 }

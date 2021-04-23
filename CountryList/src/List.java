@@ -82,7 +82,8 @@ public class List {
         for (Node i = first; i != null; i = i.getNextElement()) {
             String country = i.showList();
             if(country.equals(countryName)){
-                i.setNextElement(i.getNextElement().getNextElement());
+                Node n = i.getPreElement();
+                n.setNextElement(n.getNextElement().getNextElement());
             }
         }
         return out;
